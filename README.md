@@ -1,70 +1,13 @@
-# Getting Started with Create React App
+# practice movie app for movie notice app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**프로젝트 진행과정**
 
-## Available Scripts
+1. fetch 진행시 then을 사용하지 않는 방법으로 진행하기 위해 async-await를 사용하여 getmovies라는 함수를 만들었고 useState, useEffect 이용하여 영화 데이터들을 movies에 넣어주고 로딩상태를 전환시켰습니다.
 
-In the project directory, you can run:
+2. 이후 배열 메소드 map을 통해 각각의 영화에 대해서 이름, 포스터이미지, 줄거리를 구현하였고 특별히 장르의 경우 array였기 때문에 이 부분만 추가로 map 처리하여 각각의 영화에 대해서 여러 장르들을 나타낼 수 있었습니다.
 
-### `npm start`
+3. 코드의 복잡성을 줄이기 위한 방법을 고민한 결과 App.js 파일을 나눠서 작업을 하면 되겠다는 판단을 하였습니다. 그래서 새로 Movie.js를 생성하여 props를 이용해 App.js와 연결시키면 되겠다는 생각을 하게 되었고 이 방법을 적용하여 파일을 나누기 전 기존 소스코드와 동일하게 앱이 작동하는 결과를 얻는데 성공하였습니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+4. React Router에서 Link를 이용하여 브라우저 전체 새로고침 없이 영화 title을 클릭시 유저가 기본 홈페이지로부터 해당 영화 상세정보(detail) 페이지로 이동할 수 있는 기능을 추가로 구현했습니다. (Home.js, Detail.js)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5. 영화 상세정보(detail) 페이지에서는 기본 홈페이지와 유사한 로직을 적용하여 해당 영화의 배경화면, 상세정보링크, 개봉연도를 제공하도록 기능을 구현하였습니다. (+홈화면 CSS 스타일링)
